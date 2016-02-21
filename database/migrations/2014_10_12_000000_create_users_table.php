@@ -19,7 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->integer('health');
             $table->integer('money');
-            $table->integer('remember_token');
+            $table->string('remember_token');
+            $table->integer('builder_nr');
             $table->timestamps();
         });
     }

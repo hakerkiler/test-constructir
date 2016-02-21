@@ -40,3 +40,16 @@ Route::group(['middleware' => ['web']], function () {
         'as'   => 'game.page'
     ]);
 });
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+
+    Route::get('/game', [
+        'uses' => 'HomeController@game_page',
+        'as'   => 'game.page'
+    ]);
+    Route::post('/update_user', [
+        'uses' => 'HomeController@update_user',
+        'as'   => 'update_user'
+    ]);
+
+});
