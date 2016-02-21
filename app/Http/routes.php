@@ -35,10 +35,6 @@ Route::group(['middleware' => ['web']], function () {
         'uses' => 'HomeController@register',
         'as'   => 'register.post'
     ]);
-    Route::get('/game', [
-        'uses' => 'HomeController@game_page',
-        'as'   => 'game.page'
-    ]);
 });
 
 Route::group(['middleware' => ['web', 'auth']], function () {
@@ -50,6 +46,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/update_user', [
         'uses' => 'HomeController@update_user',
         'as'   => 'update_user'
+    ]);
+    Route::get('/logout', [
+        'uses' => 'HomeController@logout',
+        'as'   => 'logout.user'
     ]);
 
 });

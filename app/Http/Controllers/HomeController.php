@@ -43,6 +43,10 @@ class HomeController extends Controller
     public function game_page(){
         return view('game');
     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->back();
+    }
 
     public function update_user(Request $data){
         $input = $data->all();

@@ -104,6 +104,7 @@
             });
         });
     </script>
+    <a href="{{ route('logout.user') }}">Iesire</a>
     <div>
         <div class="sanatate">{{ Auth::user()->health }}</div><br>
         <div class="bani">{{ Auth::user()->money }}</div><br>
